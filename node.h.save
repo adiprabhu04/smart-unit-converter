@@ -1,0 +1,12 @@
+#ifndef NODE_H
+#define NODE_H
+
+typedef struct Node {
+    char* label;
+    struct Node *left, *right;
+} Node;
+
+Node* create_node(char* label, Node* left, Node* right);
+void print_tree(Node* root, int level);
+
+#endif
