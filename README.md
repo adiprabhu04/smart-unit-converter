@@ -58,11 +58,22 @@ It’s built using **Lex (Flex)** and **Yacc (Bison)**, with the conversion logi
 
 ```
 smart-unit-converter/
-├── converter.l       # Lex file: Tokenizes words like "convert", "to", numbers, units
-├── converter.y       # Yacc file: Parses the natural language grammar
-├── conversion.c      # Handles actual logic for converting units
-├── node.c / node.h   # (Optional) Used for syntax tree or output formatting
-├── README.md         # Project documentation (you’re reading it)
+├── ambiguity_check.l # Lex file to detect ambiguous patterns
+├── char_classifier.l # Lex file to classify characters (vowel, digit, etc.)
+├── conversion.c # Handles core conversion logic
+├── converter.l # Lex file for natural language unit parsing
+├── converter.y # Yacc grammar for unit conversion commands
+├── expr.l # Lex file for arithmetic expressions
+├── expr.y # Yacc file paired with expr.l
+├── line_numberer.l # Adds line numbers to input text
+├── node.c / node.h # Functions to build & print parse trees
+├── parser.y # Parser grammar file (unsure which .l file connects)
+├── program1.l # Possibly another test or scanner
+├── tokenizer.l # Lex file for generic tokenization
+├── word_counter.l # Lex file that counts words in text
+├── .gitignore # Git ignore rules
+├── README.md # Project documentation (you’re reading it)
+
 ```
 
 ---
